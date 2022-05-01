@@ -1,0 +1,170 @@
+<!DOCTYPE html>		<!-- HTML5 Doctype -->
+<html lang="en">	<!-- HTML5 Opening Tag, English -->
+
+<head>
+	<!-- Select character set Unicode Transformation Format 8.
+	The other attributes determine the pages dimension and scaling -->
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Script to ensure compatibility with Internet Explorer versions below v9 ->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<title>Mobile Catering</title>
+	
+	<!-- Three stylesheets are used below: 
+	1) css_external_navbar for the navigation bar at the top
+	2) css_external_main for the general webpage display
+	3) css_external_modal for the mobile catering modal element
+	- font-awesome.min for the fonts
+	- A selected font via the Google fonts API -->
+	<link rel="stylesheet" href="../css/css_external_navbar.css">
+	<link rel="stylesheet" href="../css/css_external_main.css">
+	<link rel="stylesheet" href="../css/css_external_modal.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700">
+	
+	<!-- Adding in jQuery and the external JavaScript script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../javascript/js_external.js"></script>
+</head>
+
+<body>
+
+<nav class="nav">														<!-- The <nav> element defines a set of navigation links -->
+	<ul class="nav__list">												<!-- Unordered list <ul> elements represent each navbar choice -->
+		<li class="nav__listlogo">										<!-- List item <li> is an item within the unordered list "nav__list" -->
+			<a href="../index.html"><img class="logo" src="../images/logo_rossinis.svg" alt="Rossinis Logo"></a>	<!-- Rossinis logo -->
+		</li>
+		<li class="nav__listitem"><a href="menu.html">Menu</a></li>
+		<li class="nav__listitem"><a href="location.html">Location</a></li>
+		<li class="nav__listitem"><a href="about_us.html">About</a> 	<!-- About Us contains a sub-unordered list as the drop-down menu -->
+			<ul class="nav__listitemdrop">								<!-- The drop-down menu is of class "nav__listitemdrop" -->
+				<li><a href="contact_us.html">Contact Us</a></li>		<!-- Contact Us is within the About menu choice -->
+			</ul>
+		</li>
+		<li class="nav__listitem"><a href="mobile_catering.html">Mobile Catering</a></li>
+		<li class="nav__listitem"><a href="gallery.html">Gallery</a></li>
+	</ul>
+</nav>																	<!-- Close the navbar. The bodys content comes next -->
+    
+<div class="row">														<!-- Row type <div> element -->
+   <div class="leftcolumn">												<!-- Column type <div> element within the above row <div> element -->														
+		<div class="card_slim">											<!-- A "card" class <div>. Mimics a paper card -->
+			<div class="background-image bg-catering"></div>			<!-- <div> to display image below navbar -->					
+		</div>
+    
+	<!-- This card is the same in terms of structure to the one above.
+	A single card could be used for containing all the content for a single page, if required -->
+    <div class="card_about_us">
+		<div class="card_about_us_column" style="height: 550px;">
+			<h1>WANT A PIZZA THE ACTION?</h1></br>
+			<h2>READY TO PARTY?</h2></br>
+			<h3>SO ARE WE!</h3>
+			</br></br>
+			<p>
+			Events with Rossinis are always memorable and special.
+			</p>
+			</br>
+			<p>
+			We are in the business of throwing pizza parties. Because as everyone says "ain't no party like a Rossinis pizza party 'cos a Rossinis pizza party finishes at a sensible time; we all have work tomorrow."
+			</p>
+			</br>
+			<p>
+			We offer inspired pizza feasts centered around our mobile wood-fired pizza oven with the option of creating a more elaborate experience with a menu of seasonal family-style dishes culled from our restaurant repertoire.
+			</p>
+			</br></br>
+			<p>
+			We offer a selection of dining options that will match the size of your group and your budget.
+			</p>
+			</br></br>
+							
+			<!-- Trigger the modal to open -->
+			<button type="button" onclick="openModal()" id="modalButton">ENQUIRE NOW</button>
+			
+			<!-- The modal -->
+			<div id="myModal" class="modal">
+			
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						</br>
+						<h2>Contact us about your catering enquiry</h2>
+						</br>
+					
+						<!-- An alert div is displayed when the user selects a date or time outside of the norm. 
+						This is a less intrusive way of implementing this functionality versus a standard alert box -->
+						<div class="alertDate" id="alertDate"></div>
+						<div class="alertTime" id="alertTime"></div>
+					</div>
+					
+					<div class="modal-body">
+						<!-- return false; needed below otherwise form submits prematurely -->
+						<form name="form" onsubmit="validateForm(); return false;">
+					   
+						<div class="container">
+							<label for="email">E-mail</label> 
+							<!-- The "email" input type ensures proper email address format validation. The "required"
+							attribute also ensure not only that an e-mail address is entered, but that it's in a valid format too -->
+							<input type="email" id="email" name="email" placeholder="ilikebigcrustsandicannotlie@homeslice.com" required>
+						</div>
+					  
+						<div class="opening_hours">
+						  
+							<div class="container">
+								<label for="fname">First Name</label> 
+								<input type="text" id="fname" name="firstname" placeholder="John">
+								<!-- The phone number must be local i.e. 085/6/7/8-123-4567 -->
+								<label for="phone">Phone Number</label> 
+								<input type="tel" id="phone" name="phonenumber" placeholder="087-867-5309" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" maxlength="12">
+								<!-- VALIDATION: event date - has to be at least one week from today -->
+								<label for="eventdate">Event Date (One weeks notice)</label> 
+								<input type="date" id="eventdate" name="eventdate" required>
+								<label for="starttime">Start Time (From 12pm-8pm)</label>
+								<input type="time" id="starttime" name="starttime" min="12:00" max="20:00" required>
+								<label for="eventtype">Type of Event</label>
+								<input type="text" id="eventtype" name="eventtype">
+							</div>
+						  
+							<div class="container">
+								<label for="lname">Last Name</label> 
+								<input type="text" id="lname" name="lastname" placeholder="Dough">
+								<label for="company">Company Name</label> 
+								<input type="text" id="company" name="company" placeholder="Doughbie Brothers Inc.">
+								<label for="location">Event Location</label> 
+								<input type="text" id="location" name="location">
+								<!-- VALIDATION: event end time - can't be before start time and minimum time = 2hrs -->
+								<label for="endtime">Event End Time (Before 10pm)</label>
+								<input type="time" id="endtime" name="endtime" min="14:00" max="22:00" required>
+								<!-- VALIDATION: Minimum group size (10), maximum (100) -->
+								<label for="noofpeople">Number of People</label> 
+								<input type="text" id="noofpeople" name="noofpeople" min="10" max="100">
+							</div>
+							
+						</div>
+					  
+					  <div class="container">
+						<textarea id="additionalinfo" name="additionalinfo" placeholder="Additional Information..." style="height:100px"></textarea>
+					  </div>
+				   
+					</div>	<!-- End modal-body -->
+					
+					<div class="modal-footer">
+						<input type="submit" value="Submit">
+					</div>
+				  </form>
+				  
+				</div>	<!-- Close modal content -->
+			</div>	<!-- Close myModal -->
+	    </div>	<!-- Close card_about_us_column -->
+    </div>	<!-- Close card_about_us -->
+    
+   </div>	<!-- Close leftcolumn -->
+</div>		<!-- Close row -->
+
+<div class="footer"></div>												<!-- Footer <div> element at the base of the page -->  
+
+</body>
+</html>

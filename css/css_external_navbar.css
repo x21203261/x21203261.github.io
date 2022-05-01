@@ -1,0 +1,112 @@
+/* CSS FOR NAVBAR */
+
+/* Apply to "nav" class <nav> element */
+.nav {
+	 position: fixed;						/* Sets the navbar to a fixed position */
+	 top: 0;								/* Positions the navbar at the top of the page */
+											/* !!!NOTE!!! If top:0 then any <div> header WILL NOT BE DISPLAYED */
+	 width: 100vw;							/* Width is 100% of the viewport (vw), whereas "100%" would be 100% width of the elements parent */
+	 
+	 /* Applies a shadow to the navbar: 0 (horizontal) 0 (vertical) 10px (blur amount), [shadow colour] */
+	 /* See - https://www.w3schools.com/css/css3_shadows_box.asp */
+	 box-shadow: 0 0 10px var(--clr-navbar-box-shadow);
+}	
+
+/* Apply to unordered list elements */
+.nav__list {
+	 width: 100vw;									/* Matches width of .nav container, so fills width of screen, essentially */
+													/* This can be removed and it'll still work okay, as far as I can see */
+	 background: white;								/* Sets the background to white */
+	 box-shadow: 0px 0px 10px var(--clr-gray200);	/* Apply a box shadow */
+	 padding: 1rem 0;								/* 1rem = font-size of the root (HTML) element, usually default value of 16px */
+	 border-radius: var(--radius);					/* Applies rounded corners to an element */
+	 display: flex;									/* Makes the navbar responsive. Allow us to move the navbar links around as we please */
+	 justify-content: center;						/* Justifies the flex items to the centre of the container */
+	 align-items: center;							/* Aligns the flex items to the centre of the container */
+	 gap: 0rem;										/* Creates a gap between navbar link boxes/containers i.e. 2rem means more spaced out */
+	 margin: 0 0rem;								/* Creates a margin, 0 0rem (0 top & bottom, 0 right & left) [default: 0 2rem] */
+}
+
+.nav__list a {
+	text-decoration: none;					/* Removes the underlined effect from the hyperlinks in the unordered list items i.e. <a href> */
+	color: black;							/* Makes the links font colour black */
+}
+
+/* Apply to the list item elements, which are nested within the unordered list element(s) */
+ .nav__listlogo {
+	 list-style: none;						/* Removes the bullet points from the list item elements */
+	 margin-right: auto;					/* If this is set to auto, it means the justify-content attribute in .nav__list must be changed also */
+	 margin-left: 30px;						/* Moves the logo in from the left 30 pixels */
+	 cursor: pointer;						/* Turns the cursor into a pointer, indicating a link. See - https://www.w3schools.com/cssref/pr_class_cursor.asp */
+}
+ .nav__listlogo img {
+	 height: 70px;							/* Sets the height of the logo image */
+}
+
+/* List items with the <a href> links */
+ .nav__listitem {
+	 display: inline-block;					/* Prevents the list elements from being stacked up one on top of another */
+	 list-style: none;						/* Removes the bullet points from the list item elements */
+	 font-weight: bold;						/* Makes the font weight bold */
+	 position: relative;					/* Position the list item relative to its normal position */
+											/* The top, right, bottom, left attributes will adjust the relatively-positioned element away from 
+											 * its normal position */
+	 padding: 1.5rem 1rem;					/* If the padding property has two values: top & bottom are 1.5rem, left & right are 1rem */
+	 cursor: pointer;						/* Turns the cursor into a pointer, indicating a link */
+	 margin-right: 20px;					/* Move the list items in from the right 20 pixels */
+}
+
+/* Styling applied after an instance of an list item element */
+ .nav__listitem::after {
+	 content: "";							/* Inserts a blank string within the element */
+	 width: 0;								/* Set width to zero */
+	 height: 0.3rem;						/* Set the height */
+	 border-radius: 0.2rem;					/* Applies rounded corners to an element */
+	 position: absolute;					/* Position is absolute - positioned relative to the nearest "positioned" ancestor */
+											/* With no positioned ancestors, it uses the document body, and moves along with page scrolling */
+	 left: 1rem;							/* "left" affects the horizontal position of a positioned element. Has no effect on non-positioned elements */
+	 bottom: 0.8rem;						/* "bottom" affects the vertical position of a positioned element */
+	 background-color: var(--clr-navbar-img-fill);				/* Set the background colour */
+	 transition: width 200ms ease-in;		/* Transition effect: adjust the width over 200ms, "ease-in" for a slow start */
+}
+
+/* Determines the width of the bar displayed when a list item is hovered over */
+ .nav__listitem:hover::after, .nav__listitem:focus::after {
+	 width: 80%;							/* The "display bar" width is set to 80% */
+}
+
+/* Styles the unordered list item in the drop-down menu */
+ .nav__listitem:hover ul, .nav__listitem:focus ul {
+	 opacity: 1;							/* Sets the opacity level. 1 is the default value*/
+	 visibility: visible;					/* Changes from "hidden" to "visible" once hovered over/in focus */
+}
+
+/* Styles the unordered list item drop-down element */
+ .nav__listitemdrop {
+	 position: absolute;					/* Position is absolute - positioned relative to the nearest "positioned" ancestor */
+											/* With no positioned ancestors, it uses the document body and moves along with page scrolling */
+	 top: 4rem;								/* "top" affects the vertical position of a positioned element */
+	 left: -1rem;							/* "left" affects the horizontal position of a positioned element. Has no effect on non-positioned elements */
+	 box-shadow: 0 0 10px var(--clr-navbar-box-shadow);		/* Apply a box shadow */
+	 background-color: white;				/* Set background colour to white */
+	 border-radius: var(--radius);			/* Applies rounded corners to an element */
+	 width: 12rem;							/* Set list item width to 12rem */
+	 padding: 1rem;							/* Set padding to 1rem */
+	 display: flex;							/* Makes the list items responsive. Allow us to move them around as we please */
+	 flex-direction: column;				/* Display the flexible items vertically, as a column */
+	 gap: 0.5rem;							/* Creates a gap between the list item and its parent element i.e. 2rem means more spaced out. Default 0.5rem */
+	 opacity: 0;							/* Opacity: 0 means effectively hidden until hovered over/in focus, as above */
+	 visibility: hidden;					/* Hides the drop-down <ul> element until it's hovered over/in focus, as above */
+	 transition: opacity 200ms ease-in-out; /* Transition effect: adjust the width over 200ms, "ease-in-out" with a slow start and end */
+}
+
+/* Styles the list item drop-down element */
+ .nav__listitemdrop li {
+	 list-style: none;									/* Removes the bullet points from the list item elements */
+	 padding: 0.5rem 1rem;								/* If the padding property has two values: top & bottom are 0.5rem, left & right are 1rem */
+	 border-radius: var(--radius);						/* Applies rounded corners to an element */
+	 transition: background-color 200ms ease-in-out;	/* Transition effect: adjust the background colour over 200ms, "ease-in-out" with a slow start and end */
+}
+ .nav__listitemdrop li:hover, .nav__listitemdrop li:focus {
+	 background-color: var(--clr-pale-pink);			/* Sets the background colour of the link to a pale pink once hovered over/in focus */
+}

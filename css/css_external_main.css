@@ -1,0 +1,416 @@
+/* CSS FOR MAIN PAGES */
+
+/* CSS variables have access to the DOM. This means the variables
+ * can have local/global scope, be changed using JavaScript, or changed
+ * via media queries. A popular use of CSS variables is to store colour values */
+
+/* The root selector matches the documents root element, i.e. the HTML element.
+ * var(--variable-name); is used to access the variables value (i.e. colour) */
+ 
+:root {
+ /* Colour variables */
+  --clr-primary: #6aeeb5;
+  --clr-primary-hover: #29e6a7;
+  --clr-primary-dark: #039d69;
+  --clr-gray100: #f0f7f8;
+  --clr-gray150: #f4f6fb;
+  --clr-gray200: #cfd8dc;
+  --clr-gray300: #e1e5ee;
+  --clr-gray400: #767b91;
+  --clr-gray500: #4f546c;
+  --clr-gray600: #2a324b;
+  --clr-gray700: #161d34;
+  --clr-italian-green: #355834;
+  --clr-navbar-box-shadow: #e1e5ee;
+  --clr-navbar-img-fill: #f06292;
+  --clr-pale-pink: #fce4ec;
+	
+/* Border radius */
+  --radius: 0.2rem;
+}
+
+/* Basic styling applied to the whole document/every element */
+/* *:before - apply styling before all elements
+ * *:after - apply styling after all elements */
+ 
+ *, *:before, *:after {
+ 
+/* box-sizing: border-box = width & height apply to all parts of the element: content, padding, and borders (default).
+ * box-sizing: content-box = width & height only apply to the content of the element.
+ * Imagine measuring a painting - "border-box" would measure and include the frame as its total size, whereas
+ * content-box only measures the painting itself, not the frame. */
+ 
+  box-sizing: border-box;		
+  margin: 0;						
+  padding: 0;
+}
+
+body {
+  font-family: Montserrat, sans-serif;			/* The Montserrat font, as well as many other, is available via the Google Font API */
+  background: var(--clr-gray100);				/* Using the "var" function to assign a colour to the background */
+  margin: 0px;
+}
+
+/* Header (not actually used but keeping the CSS for it just in case) */
+.header {
+  height: 20px;
+  padding: 0px;
+  text-align: center;							/* Sets the text alignment for a <div> element e.g. center, left, right, justify */
+												/* See - https://www.w3schools.com/cssref/pr_text_text-align.ASP */
+  background: var(--clr-italian-green);
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+.row {
+  padding-top: 120px;							/* !!!NOTE!!! This prevents the row <div> container from going underneath the <nav> */
+												/* margin-top can also be used, at a height equal or larger than the height of the navbar */
+}
+
+#row_bg {
+  background-image: url('../images/red_and_white_gingham_pattern_0407.jpg');
+  background-repeat: round;						/* Repeat the image, no gaps */
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";									/* Inner content is blank */
+  display: table;								/* Lets the element behave like a table element */
+  clear: both;									/* clear: both means that the .row <div> element is pushed below both left and right floated elements */
+}
+
+/* Create two unequal columns that float next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;									/* The leftcolumn <div> should float to the left */
+  width: 100%;									/* !!!NOTE!!! Can reduce this to 75% if we want to show right-hand <div> elements */
+}
+
+.leftcolumn img {
+  display: block;								/* Display as a block element - starts on a new line, takes up the whole width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;									/* The rightcolumn <div> should *also* float to the left, to the right side of the leftcolumn <div> */
+  width: 25%;									/* Note: float: left won't show unless .leftcolumns width is set to < 100% */
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image/Placeholder image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card_slim {
+  padding: 0px;
+  margin-top: -20px;
+}
+
+#main_card {
+  width: 30%;
+  margin: auto;
+  background: none;
+  padding: 0;
+  margin-top: -20px
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 10px;								/* Default: 10-20px */
+}
+
+/* Adding the content message here is more efficient than adding it in each HTML page */
+.footer::after {
+  font-size: 24px;
+  font-weight: bold;
+  content: "Copyright \00A9  2022 Rossinis Pizzeria";
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/*-*-*-**-*-*-**-*-*-**-*-*-*/
+/*-*-*-* ABOUT US CSS *-*-*-*/
+/*-*-*-**-*-*-**-*-*-**-*-*-*/
+.card_about_us {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: -10px;
+}
+
+.card_about_us_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+  width: 30%;
+  margin-top: -10px;
+}
+
+/*-*-*-**-*-*-**-*-*-**-*-*-**-/
+/*-*-*-* CONTACT US CSS *-*-*-*/
+/*-*-*-**-*-*-**-*-*-**-*-*-*-*/
+input[type=text], [type=email], select, textarea,
+[type=date], [type=time], [type=tel] {									/* Style the input elements */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;										
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a card effect for articles */
+.card_contact_us {
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  width: 30%;
+  border-radius: 5px;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.container label {
+  float: left;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/*-*-*-**-*-*-**-*-*-**-*-*-**-/
+/*-*-*-* MENU CSS *-*-*-*/
+/*-*-*-**-*-*-**-*-*-**-*-*-*-*/
+/* Float four columns side by side, for the Menu pizza options */
+.card_column {
+  float: left;
+  width: 25%;
+  padding: 0 16px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.card_row {
+  margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.card_row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the pizza cards */
+.pizza_card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);							/* This adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.pizza_card img {
+  width: 50%;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+.card_column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.pizza_card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.pizza_card button:hover {
+  opacity: 0.7;
+}
+
+.img_column {
+  float: left;
+  width: 25%;
+  padding: 0 5px;
+}
+
+.img_column img {
+  width: 100%;
+}
+
+.submit_button {
+  text-align: center;
+}
+
+/*-*-*-**-*-*-**-*-*-**--**-*-*-**-*/
+/*-*-*-* MOBILE CATERING CSS *-*-*-*/
+/*-*-*-**-*-*-**-*-*-**-*-*--**-*-*/
+
+/* CSS for Mobile Catering Alert Box */
+
+/* Alert box. Display: none makes it hidden without affecting the layout.
+ * The jQuery function causes this alert to be displayed temporarily when
+ * the form validation fails in some way - the alert box fades in, stays
+ * on screen for enough time to be read, then fades out again */
+.alertDate, .alertTime {												/* The . for .alertTime is required, or it won't work */
+  padding: 20px;
+  background-color: red;
+  color: white;
+  margin-bottom: 15px;
+  display: none;
+  text-align: center;
+}
+
+
+/*-*-*-**-*-*-**-***-*-*-**-*/
+/*-*-*-* LOCATION CSS *-*-*-*/
+/*-*-*-**-*-*-**-*-*---**-*-*/
+.h2 {																	/* <h2> element on Location page - center text */
+  text-align: center;
+}
+.ul {																	/* Unordered list <ul> element on Location page - remove bullet points */
+  list-style: none;
+}
+
+.opening_hours {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#opening_hours_card {
+  width: 30%;
+  margin: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+#map {
+  width: 60%;
+  margin: auto;
+}
+
+#days_of_week {
+  padding-right: 50px;
+}
+
+/********************
+ * BACKGROUND IMAGES
+ ********************/
+.background-image {
+  background-size: cover;												/* Background image covers container */
+  background-repeat: no-repeat;											/* Don't repeat the image i.e. tile display the image */
+  background-position: center;											/* Center the image */
+  /*width: 100px;*/
+  height: 100vh;														/* Set the background image height to 100 viewport height units, i.e.
+																		100% of the height of the current viewport */
+  padding-top: 20px;
+}
+
+/* Location background image */
+.bg-location {
+    background-image:	url('../images/pexels-guilherme-rossi-1668928.jpg');	/* Location of background image */
+}
+/* Mobile Catering background image */
+.bg-catering  {
+  background-image:	url('../images/pexels-thirdman-5675763.jpg');
+}
+/* About Us */
+.bg-about  {
+  background-image:	url('../images/pexels-eneida-nieves-905847.jpg');
+}
+/* Contact Us */
+.bg-contact_us  {
+  background-image:	url('../images/pexels-rodnae-productions-8783605.jpg');		
+}
+/* Index */
+.bg-index  {
+  background-image:	url('../images/red_and_white_gingham_pattern_0407.jpg');	/* Location of background image */
+  height: auto;
+}
+
+/* Alternative layout for Index background:
+  background-size: cover;												/* Background image covers container 
+  background-repeat: round;												/* Don't repeat the image i.e. tile display the image 
+  background-position: center;											/* Center the image 
+  /*width: 100px;*/
+  /*height: 100vh;*/													/* Set the background image height to 100 viewport height units, i.e.
+																		100% of the height of the current viewport 
+  padding-top: 20px;
+}
+*/

@@ -1,0 +1,91 @@
+<!DOCTYPE html>		<!-- HTML5 Doctype -->
+<html lang="en">	<!-- HTML5 Opening Tag, English -->
+
+<head>
+	<!-- Select character set Unicode Transformation Format 8.
+	The other attributes determine the pages dimension and scaling -->
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Script to ensure compatibility with Internet Explorer versions below v9 ->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<title>Contact Us</title>
+	
+	<!-- Two stylesheets are used below: 
+	1) css_external_navbar for the navigation bar at the top
+	2) css_external_main for the general webpage display
+	- font-awesome.min for the fonts
+	- A selected font via the Google fonts API -->
+	<link rel="stylesheet" href="../css/css_external_navbar.css">
+	<link rel="stylesheet" href="../css/css_external_main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700">
+	
+	<!-- Adding in jQuery and the external JavaScript script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../javascript/js_external_contact_us.js"></script>
+</head>
+
+<body>
+
+<nav class="nav">														<!-- The <nav> element defines a set of navigation links -->
+	<ul class="nav__list">												<!-- Unordered list <ul> elements represent each navbar choice -->
+		<li class="nav__listlogo">										<!-- List item <li> is an item within the unordered list "nav__list" -->
+			<a href="../index.html"><img class="logo" src="../images/logo_rossinis.svg" alt="Rossinis Logo"></a>	<!-- Rossinis logo -->
+		</li>
+		<li class="nav__listitem"><a href="menu.html">Menu</a></li>
+		<li class="nav__listitem"><a href="location.html">Location</a></li>
+		<li class="nav__listitem"><a href="about_us.html">About</a> 	<!-- About Us contains a sub-unordered list as the drop-down menu -->
+			<ul class="nav__listitemdrop">								<!-- The drop-down menu is of class "nav__listitemdrop" -->
+				<li><a href="contact_us.html">Contact Us</a></li>		<!-- Contact Us is within the About menu choice -->
+			</ul>
+		</li>
+		<li class="nav__listitem"><a href="mobile_catering.html">Mobile Catering</a></li>
+		<li class="nav__listitem"><a href="gallery.html">Gallery</a></li>
+	</ul>
+</nav>																	<!-- Close the navbar. The bodys content comes next -->
+
+<div class="background-image bg-contact_us">							<!-- Background image <div> element -->
+	<div class="row">													<!-- Row type <div> element -->
+		<div class="leftcolumn">										<!-- Column type <div> element within the above row <div> element -->
+			<div class="card_contact_us">								<!-- A "card" class <div>. Mimics a paper card -->
+																		
+			<h2 class="h2">CONTACT US</h2>								<!-- Heading for card <div> -->
+			</br>
+      
+				<div class="container">		  							<!-- Open container <div> -->
+					<!-- Form mails -->
+					<form name="contactForm" method="GET" enctype="text/plain">
+					
+						<label for="fname">First Name</label>
+						<input type="text" id="fname" name="firstname" placeholder="Your name..">
+						
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+						
+						<label for="subject">Subject</label>
+						<input type="text" id="subject" name="subject" placeholder="Your subject..">
+						
+						<label for="body">Message</label>
+						<textarea id="body" name="body" placeholder="Write something.." style="height:170px"></textarea>
+						
+						<div class="submit_button">
+							<!-- Call the sendMail() JavaScript function to create a mailto: with custom attributes -->
+							<input type="submit" value="Submit" onclick="sendMail()">
+						</div>											
+						
+					</form>
+				</div>													<!-- Close container <div> -->
+      
+			</div>		<!-- Close card <div> -->
+		</div>		<!-- Close leftcolumn <div> -->
+	</div>		<!-- Close row <div> -->
+
+  <div class="footer"></div>											<!-- Footer <div> element at the base of the page -->
+  
+</div>		<!-- Close background image <div> -->																	
+
+</body>
+</html>

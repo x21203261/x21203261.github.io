@@ -1,0 +1,104 @@
+<!DOCTYPE html>		<!-- HTML5 Doctype -->
+<html lang="en">	<!-- HTML5 Opening Tag, English -->
+
+<head>
+	<!-- Select character set Unicode Transformation Format 8.
+	The other attributes determine the pages dimension and scaling -->
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Script to ensure compatibility with Internet Explorer versions below v9 ->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<title>Rossinis Pizzeria</title>
+	
+	<!-- Two stylesheets are used below: 
+	1) css_external_navbar for the navigation bar at the top
+	2) css_external_main for the general webpage display
+	- font-awesome.min for the fonts
+	- A selected font via the Google fonts API -->
+	<link rel="stylesheet" href="css/css_external_navbar.css">
+	<link rel="stylesheet" href="css/css_external_main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700">
+</head>
+
+<body>
+
+<nav class="nav">														<!-- The <nav> element defines a set of navigation links -->
+	<ul class="nav__list">												<!-- Unordered list <ul> elements represent each navbar choice -->
+		<li class="nav__listlogo">										<!-- List item <li> is an item within the unordered list "nav__list" -->
+			<a href="index.html"><img class="logo" src="images/logo_rossinis.svg" alt="Rossinis Logo"></a>	<!-- Rossinis logo -->
+		</li>
+		<li class="nav__listitem"><a href="html/menu.html">Menu</a></li>
+		<li class="nav__listitem"><a href="html/location.html">Location</a></li>
+		<li class="nav__listitem"><a href="html/about_us.html">About</a> <!-- About Us contains a sub-unordered list as the drop-down menu -->
+			<ul class="nav__listitemdrop">								 <!-- The drop-down menu is of class "nav__listitemdrop" -->
+				<li><a href="html/contact_us.html">Contact Us</a></li>	 <!-- Contact Us is within the About menu choice -->
+			</ul>
+		</li>
+		<li class="nav__listitem"><a href="html/mobile_catering.html">Mobile Catering</a></li>
+		<li class="nav__listitem"><a href="html/gallery.html">Gallery</a></li>
+	</ul>
+</nav>																	<!-- Close the navbar. The bodys content comes next -->
+
+<div class="background-image bg-index">									<!-- Background image <div> element with a red gingham tablecloth background -->
+	<div class="row">													<!-- Row type <div> element -->
+		<div class="leftcolumn">										<!-- Column type <div> element within the above row <div> element -->
+	  
+			<!-- A "card" class <div>. Mimics a paper card -->																	
+			<div class="card" id="main_card">					
+				<img src="images/logo_main_4.png" alt="Rossinis Logo and Slogan">
+				</br>
+			</div>	<!-- Close card <div> -->
+    
+		</div>		<!-- Close leftcolumn <div> -->
+	</div>			<!-- Close row <div> -->
+
+	<div class="card">
+		</br>
+		<h2 align="center">WELCOME TO ROSSINIS PIZZERIA!</h2>
+		</br></br>
+		<p align="center">
+		  Variety truly is the spice of life. We take that statement to heart here at Rossinis, where we craft specialty pies daily, washed down with the finest Italian wine. Ready for your mouth to water even more? All of our pizzas are prepared with scratch-made pizza sauce and are smothered with only the finest mozzarella cheese on our freshly prepared dough. We’re all about getting your pizza to you as quickly as possible too. That’s why we can accommodate all of your carry out, delivery, and catering needs.
+		  </br></br>
+		  Drop by for a slice soon!
+		</p>
+		</br>
+	</div>	<!-- Close card <div> -->
+</div>		<!-- Close index_bg <div> -->
+
+
+<!-- Image grid -->
+<div class="img_column">
+	<img src="images/pexels-athena-2914550_small.jpg" alt="Neon Pizza Sign">
+</div>
+<div class="img_column">
+	<img src="images/pexels-vinicius-benedit-1082343_small.jpg" alt="Pizza Woodburning Oven">
+</div>
+<div class="img_column">
+	<img src="images/pexels-eneida-nieves-905847_small.jpg" alt="Pizza on Pizza Peel">
+</div>
+<div class="img_column">
+	<img src="images/pexels-rene-strgar-10406184_small.jpg" alt="Charred Crust Pizza">
+</div>
+<div class="img_column">
+	<img src="images/pexels-anna-shvets-5953531_small.jpg" alt="Slicing a Pizza">
+</div>
+<div class="img_column">
+	<img src="images/pexels-narda-yescas-1566837_small.jpg" alt="Pizza Selection">
+</div>
+<div class="img_column">
+	<img src="images/pexels-andrea-piacquadio-723031_small.jpg" alt="Woman Eating Pizza">
+</div>
+<div class="img_column">
+	<img src="images/pexels-william-mattey-3768007_small.jpg" alt="Pizza Ready">
+</div>
+
+<div class="img_row"></div>		<!-- Empty img_row <div> to create some space between images and footer -->
+	 
+<div class="footer"></div>		<!-- Footer <div> element at the base of the page -->
+												
+</body>
+</html>
