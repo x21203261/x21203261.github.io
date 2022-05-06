@@ -2,16 +2,19 @@
 <html lang="en">	<!-- HTML5 Opening Tag, English -->
 
 <head>
+	<title>Sudbury's Famous Pizza Truck | Mobile Catering</title>
+	
 	<!-- Select character set Unicode Transformation Format 8.
 	The other attributes determine the pages dimension and scaling -->
-	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="pizza, pizzeria, gourmet pizza, best pizza, thin crust pizza, gluten-free pizza, vegetarian pizza, vegan pizza, wood-fired oven, takeaway, near me, order, menu">
+	<meta name="description" content="Fresh wood-fired pizzas made to order in Rossini's Pizzeria, Sudbury. The best pizza truck in town!">
 	
-	<!-- Script to ensure compatibility with Internet Explorer versions below v9 ->
+	<!-- Script to ensure compatibility with Internet Explorer versions below v9 -->
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	
-	<title>Mobile Catering</title>
 	
 	<!-- Three stylesheets are used below: 
 	1) css_external_navbar for the navigation bar at the top
@@ -27,7 +30,7 @@
 	
 	<!-- Adding in jQuery and the external JavaScript script -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../javascript/js_external.js"></script>
+	<script src="../javascript/js_external.js"></script>
 </head>
 
 <body>
@@ -59,26 +62,26 @@
 	A single card could be used for containing all the content for a single page, if required -->
     <div class="card_about_us">
 		<div class="card_about_us_column" style="height: 550px;">
-			<h1>WANT A PIZZA THE ACTION?</h1></br>
-			<h2>READY TO PARTY?</h2></br>
+			<h1>WANT A PIZZA THE ACTION?</h1><br>
+			<h2>READY TO PARTY?</h2><br>
 			<h3>SO ARE WE!</h3>
-			</br></br>
+			<br><br>
 			<p>
 			Events with Rossinis are always memorable and special.
 			</p>
-			</br>
+			<br>
 			<p>
 			We are in the business of throwing pizza parties. Because as everyone says "ain't no party like a Rossinis pizza party 'cos a Rossinis pizza party finishes at a sensible time; we all have work tomorrow."
 			</p>
-			</br>
+			<br>
 			<p>
 			We offer inspired pizza feasts centered around our mobile wood-fired pizza oven with the option of creating a more elaborate experience with a menu of seasonal family-style dishes culled from our restaurant repertoire.
 			</p>
-			</br></br>
+			<br><br>
 			<p>
 			We offer a selection of dining options that will match the size of your group and your budget.
 			</p>
-			</br></br>
+			<br><br>
 							
 			<!-- Trigger the modal to open -->
 			<button type="button" onclick="openModal()" id="modalButton">ENQUIRE NOW</button>
@@ -90,9 +93,9 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<span class="close">&times;</span>
-						</br>
+						<br>
 						<h2>Contact us about your catering enquiry</h2>
-						</br>
+						<br>
 					
 						<!-- An alert div is displayed when the user selects a date or time outside of the norm. 
 						This is a less intrusive way of implementing this functionality versus a standard alert box -->
@@ -140,21 +143,22 @@
 								<input type="time" id="endtime" name="endtime" min="14:00" max="22:00" required>
 								<!-- VALIDATION: Minimum group size (10), maximum (100) -->
 								<label for="noofpeople">Number of People</label> 
-								<input type="text" id="noofpeople" name="noofpeople" min="10" max="100">
+								<input type="number" id="noofpeople" name="noofpeople" min="10" max="100">
 							</div>
 							
 						</div>
 					  
-					  <div class="container">
-						<textarea id="additionalinfo" name="additionalinfo" placeholder="Additional Information..." style="height:100px"></textarea>
-					  </div>
-				   
-					</div>	<!-- End modal-body -->
-					
-					<div class="modal-footer">
-						<input type="submit" value="Submit">
-					</div>
-				  </form>
+						<div class="container">
+							<textarea id="additionalinfo" name="additionalinfo" placeholder="Additional Information..." style="height:100px"></textarea>
+						</div>
+						
+						<div class="modal-footer">
+							<input type="submit" value="Submit">
+						</div>
+						
+						</form>
+						
+					</div>	<!-- End modal-body -->	 	
 				  
 				</div>	<!-- Close modal content -->
 			</div>	<!-- Close myModal -->

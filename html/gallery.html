@@ -2,16 +2,19 @@
 <html lang="en">	<!-- HTML5 Opening Tag, English -->
 
 <head>
+	<title>Sudbury's Finest Pizzas | Gallery</title>
+	
 	<!-- Select character set Unicode Transformation Format 8.
 	The other attributes determine the pages dimension and scaling -->
-	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="pizza, pizzeria, gourmet pizza, best pizza, thin crust pizza, gluten-free pizza, vegetarian pizza, vegan pizza, wood-fired oven, takeaway, near me, order, menu">
+	<meta name="description" content="Fresh wood-fired pizzas made to order in Rossini's Pizzeria, Sudbury. Come take a look and see for yourself!">
 	
-	<!-- Script to ensure compatibility with Internet Explorer versions below v9 ->
+	<!-- Script to ensure compatibility with Internet Explorer versions below v9 -->
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	
-	<title>Gallery</title>
 	
 	<!-- Three stylesheets are used below: 
 	1) css_external_navbar for the navigation bar at the top
@@ -27,7 +30,7 @@
   
 	<!-- Adding in jQuery and the external JavaScript script -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../javascript/js_external_gallery.js"></script>
+	<script src="../javascript/js_external_gallery.js"></script>
 </head>
 
 <body>
@@ -48,132 +51,132 @@
 		<li class="nav__listitem"><a href="gallery.html">Gallery</a></li>
 	</ul>
 </nav>																	<!-- Close the navbar. The bodys content comes next -->
-  
+
 <div class="row">														<!-- Row type <div> element -->
 	<div class="leftcolumn">											<!-- Column type <div> element within the above row <div> element -->
+
 			
-		<!-- Container for the image gallery -->
-		<div class="container_gallery">
-		
-			<!-- Full-width images with number text -->
-			<div class="mySlides">
-				<div class="numbertext">1 / 12</div>
-				<img src="../images/pexels-andré-beltrame-1878346.jpg">
-				</div>
-		
-			<div class="mySlides">
-				<div class="numbertext">2 / 12</div>
-				<img src="../images/pexels-cottonbro-6188300.jpg">
+		<div class="container_gallery">									<!-- Container for gallery thumbnails and slideshow -->
+																		<!-- Each slide show image will be hidden by default, and then shown full-width once thumbnail is selected -->
+																		<!-- Arrows will control naviagting through the slideshow -->
+
+			<!-- Div for slide show image, inner Div for numeric label on each image -->
+			<div class="slideImage">
+				<div class="slideLabel">1 / 12</div>
+				<img src="../images/pexels-andré-beltrame-1878346.jpg" alt="Pizza cooking in an Oven">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">3 / 12</div>
-				<img src="../images/pexels-engin-akyurt-2260555.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">2 / 12</div>
+				<img src="../images/pexels-cottonbro-6188300.jpg" alt="Couple sitting at a table">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">4 / 12</div>
-				<img src="../images/pexels-artem-beliaikin-1062269.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">3 / 12</div>
+				<img src="../images/pexels-engin-akyurt-2260555.jpg" alt="Close-up of a cooked pizzq">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">5 / 12</div>
-				<img src="../images/pexels-lawrence-suzara-1581554.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">4 / 12</div>
+				<img src="../images/pexels-artem-beliaikin-1062269.jpg" alt="Chef in chefs whites">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">6 / 12</div>
-				<img src="../images/pexels-valeria-boltneva-580613.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">5 / 12</div>
+				<img src="../images/pexels-lawrence-suzara-1581554.jpg" alt="Inside seating area of the restaraunt">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">7 / 12</div>
-				<img src="../images/pexels-lisa-fotios-776538.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">6 / 12</div>
+				<img src="../images/pexels-valeria-boltneva-580613.jpg" alt="Kitchen staff mixing drinks">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">8 / 12</div>
-				<img src="../images/pexels-elevate-1269028.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">7 / 12</div>
+				<img src="../images/pexels-lisa-fotios-776538.jpg" alt="Bar area of the restaraunt">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">9 / 12</div>
-				<img src="../images/pexels-elevate-1267360.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">8 / 12</div>
+				<img src="../images/pexels-elevate-1269028.jpg" alt="People at a table drinking beers">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">10 / 12</div>
-				<img src="../images/pexels-jeswin-thomas-1619576.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">9 / 12</div>
+				<img src="../images/pexels-elevate-1267360.jpg" alt="Beer being poured from a tap">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">11 / 12</div>
-				<img src="../images/pexels-kampus-production-8629114.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">10 / 12</div>
+				<img src="../images/pexels-jeswin-thomas-1619576.jpg" alt="Chef kneading some dough">
 			</div>
 		
-			<div class="mySlides">
-				<div class="numbertext">12 / 12</div>
-				<img src="../images/pexels-elevate-1269043.jpg">
+			<div class="slideImage">
+				<div class="slideLabel">11 / 12</div>
+				<img src="../images/pexels-kampus-production-8629114.jpg" alt="Chef rolling dough with a rolling pin">
 			</div>
 		
-			<!-- Next and previous buttons -->
-			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			<a class="next" onclick="plusSlides(1)">&#10095;</a>
-		
-			<!-- Image text -->
-			<div class="caption-container">
-				<p id="caption"></p>
+			<div class="slideImage">
+				<div class="slideLabel">12 / 12</div>
+				<img src="../images/pexels-elevate-1269043.jpg" alt="Two beers together in an act of cheers">
 			</div>
 		
-			<!-- Thumbnail images -->
+			<!-- Slide show control arrows -->
+			<!-- Call JS function to change the slide image displayed-->
+			<a class="backwards" onclick="changeSlide(-1)">&#8592;</a>
+			<a class="forwards" onclick="changeSlide(1)">&#8594;</a>
+		
+		
+			<!-- Divs for Gallery thumbnails, 4 column x 3 row grid of all 12 images -->
 			<div class="row">
 				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-andré-beltrame-1878346.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pizza in Oven">
+					<img class="thumbnail" src="../images/pexels-andré-beltrame-1878346.jpg" onclick="thumbSlide(1)" alt="Pizza cooking in an Oven">
 				</div>
 				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-cottonbro-6188300.jpg" style="width:100%" onclick="currentSlide(2)" alt="Couple">
+					<img class="thumbnail" src="../images/pexels-cottonbro-6188300.jpg" onclick="thumbSlide(2)" alt="Couple sitting at a table">
 				</div>
 				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-engin-akyurt-2260555.jpg" style="width:100%" onclick="currentSlide(3)" alt="Up close">
+					<img class="thumbnail" src="../images/pexels-engin-akyurt-2260555.jpg" onclick="thumbSlide(3)" alt="Close-up of a cooked pizzq">
 				</div>
 				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-artem-beliaikin-1062269.jpg" style="width:100%" onclick="currentSlide(4)" alt="Chef">
-				</div>
-			</div>
-		
-			<div class="row">
-				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-lawrence-suzara-1581554.jpg" style="width:100%" onclick="currentSlide(5)" alt="Interior">
-				</div>
-				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-valeria-boltneva-580613.jpg" style="width:100%" onclick="currentSlide(6)" alt="Mixology">
-				</div>
-				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-lisa-fotios-776538.jpg" style="width:100%" onclick="currentSlide(7)" alt="Mixology">
-				</div>
-				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-elevate-1269028.jpg" style="width:100%" onclick="currentSlide(8)" alt="Mixology">
+					<img class="thumbnail" src="../images/pexels-artem-beliaikin-1062269.jpg" onclick="thumbSlide(4)" alt="Chef in chefs whites">
 				</div>
 			</div>
 		
 			<div class="row">
 				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-elevate-1267360.jpg" style="width:100%" onclick="currentSlide(9)" alt="Mixology">
+					<img class="thumbnail" src="../images/pexels-lawrence-suzara-1581554.jpg" onclick="thumbSlide(5)" alt="Inside seating area of the restaraunt">
 				</div>
 				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-jeswin-thomas-1619576.jpg" style="width:100%" onclick="currentSlide(10)" alt="Mixology">
+					<img class="thumbnail" src="../images/pexels-valeria-boltneva-580613.jpg" onclick="thumbSlide(6)" alt="Kitchen staff mixing drinks">
 				</div>
 				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-kampus-production-8629114.jpg" style="width:100%" onclick="currentSlide(11)" alt="Mixology">
+					<img class="thumbnail" src="../images/pexels-lisa-fotios-776538.jpg" onclick="thumbSlide(7)" alt="Bar area of the restaraunt">
 				</div>
 				<div class="column_gallery">
-					<img class="demo cursor" src="../images/pexels-elevate-1269043.jpg" style="width:100%" onclick="currentSlide(12)" alt="Mixology">
+					<img class="thumbnail" src="../images/pexels-elevate-1269028.jpg" onclick="thumbSlide(8)" alt="People at a table drinking beers">
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="column_gallery">
+					<img class="thumbnail" src="../images/pexels-elevate-1267360.jpg" onclick="thumbSlide(9)" alt="Beer being poured from a tap">
+				</div>
+				<div class="column_gallery">
+					<img class="thumbnail" src="../images/pexels-jeswin-thomas-1619576.jpg" onclick="thumbSlide(10)" alt="Chef kneading some dough">
+				</div>
+				<div class="column_gallery">
+					<img class="thumbnail" src="../images/pexels-kampus-production-8629114.jpg" onclick="thumbSlide(11)" alt="Chef rolling dough with a rolling pin">
+				</div>
+				<div class="column_gallery">
+					<img class="thumbnail" src="../images/pexels-elevate-1269043.jpg" onclick="thumbSlide(12)" alt="Two beers together in an act of cheers">
 				</div>
 			</div>
 		</div>
 		<!-- Close container <div> -->
 
-</body>
+	</div>		<!-- Close leftcolumn <div> -->
+</div>		<!-- Close row <div> -->
 
 <div class="footer"></div> 												<!-- Footer <div> element at the base of the page -->
  
