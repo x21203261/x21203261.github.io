@@ -54,7 +54,7 @@
 
 /* Modal Body */
 .modal-body {
-  padding: 2px 16px;
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: column;			/* Arrange the bodys elements in columns */
   justify-content: center;			/* Centre the bodys elements */
@@ -98,3 +98,4 @@
     top: 0;							/* Stop at the top (i.e. when top = 0) */
     opacity: 1;						/* 'opacity: 1' i.e. un-hide */
   }
+}

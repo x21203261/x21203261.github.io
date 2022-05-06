@@ -2,33 +2,26 @@
  * Gallery
 ******************/
 
-* {
-  box-sizing: border-box;
-}
 
-/* Position the image container (needed to position the left and right arrows) */
+/* Position the slideshow container */
 .container_gallery {
   position: relative;
 }
 
-/* Hide the images by default */
-.mySlides {
+/* Render slides invisible when page loads */
+.slideImage {
   display: none;
 }
 
-/* Sets the image width to 100% */
-.mySlides img {
+/* Set slide image width to 100% of parent container (i.e. screen width) */
+.slideImage img{
   width: 100%;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
 
-/* Next & previous buttons */
-.prev,
-.next {
+/* Navigation arrows - appearance, colour and position */
+.backwards,
+.forwards {
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -43,20 +36,20 @@
   -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
-.next {
+/* Place "next arrow" on right hand side of screen */
+.forwards {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
+/* Add background to navigation arrows on hover */
+.backwards:hover,
+.forwards:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
+/* Slide labels - appearance, colour and position */
+.slideLabel {
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
@@ -64,34 +57,20 @@
   top: 0;
 }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-/* This code is already in css_external_main, so can be removed
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-* */
-
-/* Six columns side by side */
+/* 4 column layout for thumbnail section */
 .column_gallery {
   float: left;
   width: 25%;
 }
 
-/* Add a transparency effect for thumnbail images */
-.demo {
+/* Transparency on thumnbails when page loads*/
+.thumbnail {
   opacity: 0.6;
+  width: 100%;
 }
 
+/* Remove thumbnail transparency on hover*/
 .active,
-.demo:hover {
+.thumbnail:hover {
   opacity: 1;
 }

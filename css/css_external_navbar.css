@@ -10,6 +10,7 @@
 	 /* Applies a shadow to the navbar: 0 (horizontal) 0 (vertical) 10px (blur amount), [shadow colour] */
 	 /* See - https://www.w3schools.com/css/css3_shadows_box.asp */
 	 box-shadow: 0 0 10px var(--clr-navbar-box-shadow);
+	 z-index: 999;							/* This ensures the drop-down menu item doesn't disappear under the images in the Gallery */
 }	
 
 /* Apply to unordered list elements */

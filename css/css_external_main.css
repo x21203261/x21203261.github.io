@@ -116,6 +116,10 @@ body {
   margin-top: 20px;
 }
 
+.card h2, p {
+  text-align: center;
+}
+
 .card_slim {
   padding: 0px;
   margin-top: -20px;
@@ -181,7 +185,7 @@ body {
 /*-*-*-* CONTACT US CSS *-*-*-*/
 /*-*-*-**-*-*-**-*-*-**-*-*-*-*/
 input[type=text], [type=email], select, textarea,
-[type=date], [type=time], [type=tel] {									/* Style the input elements */
+[type=date], [type=time], [type=tel], [type=number] {									/* Style the input elements */
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -363,6 +367,14 @@ input[type=submit]:hover {
 #map {
   width: 60%;
   margin: auto;
+}
+
+#map p {
+  text-align: center;
+}
+
+#map iframe {
+  width: 50%;
 }
 
 #days_of_week {
