@@ -109,7 +109,7 @@ function calculateDates() {
 	 * Math.ceil returns the upper 'ceiling' value, rounding the value up to the next largest integer */
 	var daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
 	
-	if (daysDifference <= 0 || daysDifference <= 7) {
+	if (daysDifference <= 0 || daysDifference < 7) {
 		dateErrorMessage();
 		return false;
 	} else
